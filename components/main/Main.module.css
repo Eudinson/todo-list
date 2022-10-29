@@ -1,0 +1,10 @@
+.todo-input-container {
+    display: flex;
+    gap: .5rem;
+}
+
+.list-container {
+    padding: 2rem 4rem 2rem 0;
+    width: 54rem;
+    min-width: 54rem;
+}
