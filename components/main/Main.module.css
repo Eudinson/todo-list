@@ -8,3 +8,22 @@
     width: 54rem;
     min-width: 54rem; 
 }
+
+.list-item {
+    display: flex;
+    flex-direction: row;
+    padding: .5rem;
+    border: 1px solid #b1edff;
+    color: #51a0b8;
+    border-radius: .5rem;
+    margin-bottom: .5rem;
+}
+
+.list-item:hover {
+    border: 1px solid #ff8b8b;
+    cursor: pointer;
+}
+
+.action-btn-container {
+    display: flex;
+}
