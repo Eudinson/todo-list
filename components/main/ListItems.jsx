@@ -3,7 +3,6 @@ import ListItem from '@mui/material/ListItem';
 import styles from './Main.module.css';
 import { IconButton } from '@mui/material';
 import { DeleteOutline, EditOutlined } from '@mui/icons-material';
-import { useState } from 'react';
 
 const ListItems = ({ listItems, setListItems }) => {
 
