@@ -9,31 +9,33 @@ import styles from './Main.module.css';
 
 const TodoInput = ({
     inputValue,
-    setInputValue,
     setListItems,
     listItems
 }) => {
 
-    const [error, setError] = useState(false)
+    const [error, setError] = useState(false);
+    const [input, setInput] = useState('')
 
     const handleChange = (e) => {
         const { value } = e.target
-        setInputValue(value)
+        inputValue.current = value
+        setInput(value)
     }
 
     const handleClick = () => {
         const randomId = (new Date().getMilliseconds() * Math.random(100));
-        if (!inputValue) {
+        if (!inputValue.current) {
             setError(true)
         } else {
             setError(false)
-            setInputValue('')
             const newArr = [...listItems, 
                 {
                     id: randomId,
-                    todos: inputValue
+                    todos: inputValue.current
                 }]
             setListItems(newArr)
+            inputValue.current = null;
+            setInput('')
         }
     }
 
@@ -49,7 +51,7 @@ const TodoInput = ({
                     width: '50rem',
                     minWidth: '30rem'
                 }}
-                value={inputValue}
+                value={input}
                 onChange={handleChange}
             />
             <IconButton
